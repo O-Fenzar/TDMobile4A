@@ -1,9 +1,9 @@
-package com.example.tdmobile
+package com.example.tdmobile.presentation.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
-import com.example.tdmobile.injection.MainViewModel
+import com.example.tdmobile.R
 import org.koin.android.ext.android.inject
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,12 +19,12 @@ class MainActivity : AppCompatActivity() {
 
         main_button.setOnClickListener{
 
-            mainViewModel.onClickedIncrement()
+            mainViewModel.onClickedIncrement("")
         }
 
         mainViewModel.counter.observe(this, Observer {
 
-            value -> main_text.text = value.toString()
+                value -> main_text.text = value.toString()
 
         })
     }
